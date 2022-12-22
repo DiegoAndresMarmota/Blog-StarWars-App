@@ -36,9 +36,9 @@ const getState = ({ getStore, setStore }) => {
 				} 
 
 				const baseURL = `https://swapi.dev/api/${data_type}/`;
-				try {						
-          const response_1 = await fetch(`${baseURL}`);
-          const data_1 = await response_1.json();
+				try {
+					const response_1 = await fetch(`${baseURL}`);
+					const data_1 = await response_1.json();
 
 					const response_2 = await fetch(`${data_1.next}`);
 					const data_2 = await response_2.json();
@@ -55,7 +55,7 @@ const getState = ({ getStore, setStore }) => {
 					localStorage.setItem("results", JSON.stringify(getStore().results));
 	
 				} catch (error) {
-          console.log(`Error loading message from https://swapi.dev/api/${data_type}/`, error);
+					console.log(`Error loading message from https://swapi.dev/api/${data_type}/`, error);
         }
 
 			},

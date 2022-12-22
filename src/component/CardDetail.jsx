@@ -14,9 +14,39 @@ const CardDetail = ({ index, data, data_type }) => {
   }/${index + 1}.jpg`;
 
   const attributes = {
-    people: ["gender", "birth_year", "eye_color"],
-    planets: ["population", "terrain", "climate"],
-    starships: ["manufacturer", "passengers", "cargo_capacity"],
+    people: [
+      "gender",
+      "birth_year",
+      "eye_color",
+      "mass",
+      "height",
+      "hair_color",
+      "skin_color",
+    ],
+    planets: [
+      "population",
+      "terrain",
+      "climate",
+      "rotation_period",
+      "orbital_period",
+      "diameter",
+      "gravity",
+      "surface_water",
+    ],
+    starships: [
+      "manufacturer",
+      "passengers",
+      "cargo_capacity",
+      "model",
+      "cost_in_credits",
+      "length",
+      "max_atmosphering_speed",
+      "crew",
+      "consumables",
+      "hyperdrive_rating",
+      "MGLT",
+      "starship_class",
+    ],
     vehicles: ["manufacturer", "passengers", "cargo_capacity"],
   };
 
@@ -70,13 +100,7 @@ const CardDetail = ({ index, data, data_type }) => {
             </div>
 
             <hr className="my-4 mx-4" />
-
             <p className="card-text">
-              ("But I must explain to you how all this mistaken idea of
-              denouncing pleasure and praising pain was born and I will give you
-              a complete account of the system, and expound the actual teachings
-              of the great explorer of the truth, the master-builder of human
-              happiness.")
             </p>
           </div>
         </div>
