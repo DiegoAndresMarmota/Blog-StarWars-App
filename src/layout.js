@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import ScrollToTop from "./component/scrollToTop";
+import ScrollToTop from "./component/ScrollToTop";
 
 import { Home } from "./views/home";
 import { Demo } from "./views/planetView";
@@ -8,11 +8,11 @@ import { Single } from "./views/single";
 import { Vehicles } from "./views/vehicles";
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/navbar";
-import { Footer } from "./component/footer";
-import { Personaje1 } from "./component/personaje1";
-import { Planets } from "./component/planets";
-import { Vehicles1 } from "./component/vehicles1";
+import {Navbar} from "./component/Navbar"
+import { Footer } from "./component/Footer";
+import { People } from "./component/People";
+import { Planets } from "./component/Planets";
+import { VehiclesFront } from "./component/VehiclesFront";
 
 //create your first component
 const Layout = () => {
@@ -39,13 +39,13 @@ const Layout = () => {
               <Vehicles />
             </Route>
             <Route exact path="/vehicles/:idvehicles">
-              <Vehicles1 />
+              <VehiclesFront />
             </Route>
             <Route exact path="/single/:theid">
               <Single />
             </Route>
             <Route exact path="/personajes/:idpersonaje">
-              <Personaje1 />
+              <People />
             </Route>
             <Route>
               <h1>Not found!</h1>

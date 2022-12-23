@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-export const Personaje1 = () => {
+export const People = () => {
   const params = useParams();
   const [datos, setDatos] = useState({});
 
