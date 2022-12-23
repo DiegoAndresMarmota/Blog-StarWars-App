@@ -1,0 +1,47 @@
+.btn-outline-warning {
+    color: rgb(214, 201, 63);
+}
+
+.btn-outline-warning:hover,
+.btn-outline-warning:focus,
+.btn-outline-warning:active,
+.btn-outline-warning.active,
+.open>.dropdown-toggle.btn-outline-warning,
+.btn-outline-warning:active {
+    background-color: rgb(214, 201, 63) !important;
+    color: rgb(34, 31, 31);
+}
+
+.navbar-collapse {
+    flex-grow: 0;
+}
+
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+
+.btn:focus,
+.btn:active {
+    outline: none !important;
+    box-shadow: none;
+}
+
+.dropdown-menu-dark {
+    background-color: rgb(34, 31, 31) !important;
+}
+
+/* hover */
+@media (min-width: 768px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .dropdown:hover .dropdown-menu {
+        display: none;
+        margin-top: auto;
+    }
+}
