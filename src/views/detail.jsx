@@ -42,7 +42,7 @@ const Detail = () => {
           </ul>
 
       <Link to="/">
-        <button className="btn btn-outline-dark me-3">
+        <button className="btn btn-outline-dark me-3 mt-5 text-white">
           Go home <FaHome />
         </button>
 			</Link>
