@@ -10,12 +10,15 @@ export const Vehicles = () => {
   const params = useParams ();
 
 	return (
-    <div className="planeta">
+    <div className="container text-center">
       <Logo />
-      <div className="secundario row d-flex justify-content-evenly row-cols-1 row-cols-md-3 g-4">
+      <div className="row align-items-center">
         {store.vehicles.map((e, i) => {
           return (
-            <div className="card" style={{ width: "18rem" }}>
+            <div
+              className="card mx-auto my-auto mt-4"
+              style={{ width: "20rem" }}
+            >
               <img
                 className="card-img-top img-fluid h-5 p-3"
                 alt="Card image cap"

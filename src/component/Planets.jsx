@@ -24,7 +24,10 @@ export const Planets = () => {
     console.log(datos2);
   });
   return (
-    <div className="card container mb-3 mt-5" style={{ width: "650px" }}>
+    <div
+      className="card container mb-3 mt-5"
+      style={{ width: "650px", backgroundColor: " whitesmoke " }}
+    >
       <div className="row g-0">
         <div className="col-md-6">
           <img
@@ -39,20 +42,23 @@ export const Planets = () => {
         </div>
 
         <div className="col-md-6">
-          <h1>Planeta </h1>
+          <h1>Planeta</h1>
           <ul>
             <li>Nombre: {datos2.result?.properties.name}</li>
             <li>Descripción: {datos2.result?.description}</li>
             <li>Diametro: {datos2.result?.properties.diameter} kms.</li>
-            <li>
-              Rotación: {datos2.result?.properties.rotation_period} dias
-            </li>
+            <li>Rotación: {datos2.result?.properties.rotation_period} dias</li>
             <li>Orbita: {datos2.result?.properties.orbital_period} dias</li>
             <li>Gravedad: {datos2.result?.properties.gravity}</li>
-            <li>Población: {datos2.result?.properties.population} individuos</li>
+            <li>
+              Población: {datos2.result?.properties.population} individuos
+            </li>
             <li>Clima: {datos2.result?.properties.climate}</li>
             <li>Terrreno: {datos2.result?.properties.terrain}</li>
-            <li>Superficie de agua: {datos2.result?.properties.surface_water} atmosferas</li>
+            <li>
+              Superficie de agua: {datos2.result?.properties.surface_water}{" "}
+              atmosferas
+            </li>
           </ul>
         </div>
       </div>

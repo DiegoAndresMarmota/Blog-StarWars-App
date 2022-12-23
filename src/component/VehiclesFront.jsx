@@ -41,7 +41,7 @@ export const VehiclesFront = () => {
           />
         </div>
         <div className="col-md-6">
-          <h1>Vehiculo </h1>
+          <h1>Vehiculo</h1>
           <ul>
             <li>Nombre: {datos3.result?.properties.name}</li>
             <li>Descripción: {datos3.result?.description}</li>
