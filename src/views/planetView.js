@@ -31,7 +31,7 @@ export const Demo = () => {
               <div className="card-body d-flex justify-content-around align-items-end">
                 <h5 className="card-title">{e.name}</h5>
                 <Link to={"/demo/" + e.uid}>
-                  <button className="button2">More</button>
+                  <button className="button2">Learn More</button>
                 </Link>
                 <button
                   className="button2"

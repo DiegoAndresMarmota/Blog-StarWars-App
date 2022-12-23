@@ -41,8 +41,8 @@ export const Planets = () => {
           />
         </div>
 
-        <div className="col-md-6">
-          <h1>Planeta</h1>
+        <div className="col-md-6 pt-2">
+          <h1 className="text-center">Planeta</h1>
           <ul>
             <li>Nombre: {datos2.result?.properties.name}</li>
             <li>Descripción: {datos2.result?.description}</li>

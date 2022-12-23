@@ -8,23 +8,23 @@ export const Navbar = () => {
     actions.removeFavorite(key);
   };
   return (
-    <nav className="navbar">
+    <nav className="navbar navbar-expand">
       <Link to="/">
-        <span className="navbar-brand"></span>
+        <button className="button1 navbar-brand mb-0 h1">Home</button>
       </Link>
       <Link to="/">
-        <button className="button1">People</button>
+        <button className="button1 navbar-brand mb-0 h1">People</button>
       </Link>
       <Link to="/demo">
-        <button className="button1">Planets</button>
+        <button className="button1 navbar-brand mb-0 h1">Planets</button>
       </Link>
       <Link to="/vehicles">
-        <button className="button1">Vehicles</button>
+        <button className="button1 navbar-brand mb-0 h1">Vehicles</button>
       </Link>
       <div className="dropdown">
         <button
           type="button"
-          className="button1 dropdown-toggle"
+          className="button1 dropdown-toggle navbar-brand mb-0 h1"
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >

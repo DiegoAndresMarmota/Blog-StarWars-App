@@ -37,8 +37,8 @@ export const People = () => {
             }
           />
         </div>
-        <div className="col-md-6">
-          <h3>Personaje</h3>
+        <div className="col-md-6 pt-2">
+          <h1 className="text-center">Personaje</h1>
           <ul>
             <li>Nombre: {datos.result?.properties.name}</li>
             <li>Descripción: {datos.result?.description}</li>
