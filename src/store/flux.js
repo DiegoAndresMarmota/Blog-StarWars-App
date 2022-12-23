@@ -1,95 +1,86 @@
-const getState = ({ getStore, setStore }) => {
+const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			results: {
-				people: [],
-				planets: [],
-				starships: [],
-				vehicles: [],
-			},
-			favorites: {
-				people: [],
-				planets: [],
-				starships: [],
-				vehicles: [],
-			},
-			hasFavorites: false
+			people: [],
+			planets: [],
+			vehicles: [],
+			fav: [],
+
+			demo: [
+				{
+					title: "FIRST",
+					background: "white",
+					initial: "white",
+				},
+				{
+					title: "SECOND",
+					background: "white",
+					initial: "white",
+				},
+			],
 		},
 		actions: {
-			getData: async (data_type) => {
-				console.log(`Loading ${data_type}...`)
-
-				const local_results = JSON.parse(localStorage.getItem("results"));
-
-				if (local_results !== null && local_results[data_type].length) {
-					console.log(`The data type ${data_type} is already in local storage`)
-					
-					let result = {}
-					result[data_type] = [...local_results[data_type]]
-					setStore({
-						results: {
-							...getStore().results,
-							...result
-						}
-					})
-					return;
-				} 
-
-				const baseURL = `https://swapi.dev/api/${data_type}/`;
-				try {
-					const response_1 = await fetch(`${baseURL}`);
-					const data_1 = await response_1.json();
-
-					const response_2 = await fetch(`${data_1.next}`);
-					const data_2 = await response_2.json();
-					
-					let result = {}
-					result[data_type] = [...data_1.results, ...data_2.results]
-
-					setStore({
-						results: {
-							...getStore().results,
-							...result
-						}
-					})
-					localStorage.setItem("results", JSON.stringify(getStore().results));
-	
-				} catch (error) {
-					console.log(`Error loading message from https://swapi.dev/api/${data_type}/`, error);
-        }
-
-			},
-			handleFavorites:(data_type, index) => {
-				let favorite = {...getStore().favorites};
-
-				if (favorite[data_type].includes(index)) {
-					favorite[data_type] = favorite[data_type].filter((e) => e !== index)
+			addFav: (nombre) => {
+				const store = getStore();
+				if (store.fav.length == 0) {
+					setStore({ fav: [...store.fav, { name: nombre }] });
 				} else {
-					favorite[data_type] = [...favorite[data_type], index]
-				};
-
-				setStore({
-					favorites: favorite,
-					hasFavorites: Object.keys(favorite).some((i) => favorite[i].length)
-				});
-				
-				localStorage.setItem("favorites", JSON.stringify(getStore().favorites));
+					if (store.fav?.find((e) => e.name == nombre) == undefined) {
+						setStore({ fav: [...store.fav, { name: nombre }] });
+					}
+				}
 			},
-			deleteFavorite:(data_type, index) => {
-				let favorite = {...getStore().favorites};
 
-				if (favorite[data_type].includes(index)) {
-					favorite[data_type] = favorite[data_type].filter((e) => e !== index)
-				};
+			getPeople: () => {
+				fetch("https://www.swapi.tech/api/people")
+					.then((res) => res.json())
+					.then((info) => setStore({ people: info.results }))
+					.catch((error) => console.log("DANGER DANGER", error));
+			},
+			getPlanets: () => {
+				fetch("https://www.swapi.tech/api/planets")
+					.then((res) => res.json())
+					.then((info) => setStore({ planets: info.results }))
+					.catch((error) => console.log("DANGER DANGER", error));
+			},
+			getVehicles: () => {
+				fetch("https://www.swapi.tech/api/vehicles")
+					.then((res) => res.json())
+					.then((info) => setStore({ vehicles: info.results }))
+					.catch((error) => console.log("DANGER DANGER", error));
+			},
 
-				setStore({
-					favorites: favorite,
-					hasFavorites: Object.keys(favorite).some((i) => favorite[i].length)
+			removeFavorite: (favoriteIndex) => {
+				const store = getStore();
+				store.fav.splice(favoriteIndex, 1);
+				setStore({ fav: store.fav });
+			},
+
+			// Use getActions to call a function within a fuction
+			exampleFunction: () => {
+				getActions().changeColor(0, "green");
+			},
+			loadSomeData: () => {
+				/**
+							fetch().then().then(data => setStore({ "foo": data.bar }))
+						*/
+			},
+			changeColor: (index, color) => {
+				//get the store
+				const store = getStore();
+
+				//we have to loop the entire demo array to look for the respective index
+				//and change its color
+				const demo = store.demo.map((elm, i) => {
+					if (i === index) elm.background = color;
+					return elm;
 				});
 
-				localStorage.setItem("favorites", JSON.stringify(getStore().favorites));
-			}
-		}
-	}
-}
+				//reset the global store
+				setStore({ demo: demo });
+			},
+		},
+	};
+};
+
 export default getState;
