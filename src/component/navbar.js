@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { FaTrashAlt, FaGripLines } from "react-icons/fa";
 import { v4 as uuidv4 } from 'uuid';
 import image from "../img/card_demo.jpg";
+import logo from "../img/Star_Wars_Logo.svg.png";
 import "../styles/navbar.css";
 
 export const Navbar = () => {
@@ -24,6 +25,8 @@ export const Navbar = () => {
 					<img src={image} alt="star wars" width="115" height="60" className=""/>
 				</Link>
 				
+				<img src={logo} alt='logo starwars' width="320" height="193" className=""/>
+
 				<button 
 					className="navbar-toggler" 
 					type="button" 
