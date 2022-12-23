@@ -41,15 +41,15 @@ export const VehiclesFront = () => {
           />
         </div>
         <div className="col-md-6">
-          <h1>Character details: </h1>
+          <h1>Vehiculo </h1>
           <ul>
-            <li>Name: {datos3.result?.properties.name}</li>
-            <li>Description: {datos3.result?.description}</li>
-            <li>Model: {datos3.result?.properties.model}</li>
-            <li>Vehicle class: {datos3.result?.properties.vehicle_class}</li>
-            <li>Manufacturer: {datos3.result?.properties.manufacturer}</li>
-            <li>Crew: {datos3.result?.properties.crew}</li>
-            <li>Passengers {datos3.result?.properties.passengers}</li>
+            <li>Nombre: {datos3.result?.properties.name}</li>
+            <li>Descripción: {datos3.result?.description}</li>
+            <li>Modelo: {datos3.result?.properties.model}</li>
+            <li>Clase: {datos3.result?.properties.vehicle_class}</li>
+            <li>Manufactura: {datos3.result?.properties.manufacturer}</li>
+            <li>Tripulación: {datos3.result?.properties.crew} tripulantes</li>
+            <li>Pasajeros: {datos3.result?.properties.passengers} pasajeros</li>
           </ul>
         </div>
       </div>

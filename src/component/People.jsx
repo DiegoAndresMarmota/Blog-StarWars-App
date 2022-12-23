@@ -38,17 +38,17 @@ export const People = () => {
           />
         </div>
         <div className="col-md-6">
-          <h3>Character details:</h3>
+          <h3>Personaje</h3>
           <ul>
-            <li>Name: {datos.result?.properties.name}</li>
-            <li>Description: {datos.result?.description}</li>
-            <li>Gender: {datos.result?.properties.gender}</li>
-            <li>Birth year: {datos.result?.properties.birth_year}</li>
-            <li>Height: {datos.result?.properties.height}</li>
-            <li>Mass: {datos.result?.properties.mass}</li>
-            <li>Hair color: {datos.result?.properties.hair_color}</li>
-            <li>Eyes color: {datos.result?.properties.eye_color}</li>
-            <li>Skin color: {datos.result?.properties.skin_color}</li>
+            <li>Nombre: {datos.result?.properties.name}</li>
+            <li>Descripción: {datos.result?.description}</li>
+            <li>Género: {datos.result?.properties.gender}</li>
+            <li>Nacimiento: {datos.result?.properties.birth_year}</li>
+            <li>Altura: {datos.result?.properties.height} cms.</li>
+            <li>Peso: {datos.result?.properties.mass} kgs.</li>
+            <li>Color de cabello: {datos.result?.properties.hair_color}</li>
+            <li>Color de ojos: {datos.result?.properties.eye_color}</li>
+            <li>Color de piel: {datos.result?.properties.skin_color}</li>
           </ul>
         </div>
       </div>

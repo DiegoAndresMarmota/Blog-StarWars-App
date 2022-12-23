@@ -39,20 +39,20 @@ export const Planets = () => {
         </div>
 
         <div className="col-md-6">
-          <h1>Character details: </h1>
+          <h1>Planeta </h1>
           <ul>
-            <li>Name: {datos2.result?.properties.name}</li>
-            <li>Description: {datos2.result?.description}</li>
-            <li>Diameter: {datos2.result?.properties.diameter}</li>
+            <li>Nombre: {datos2.result?.properties.name}</li>
+            <li>Descripción: {datos2.result?.description}</li>
+            <li>Diametro: {datos2.result?.properties.diameter} kms.</li>
             <li>
-              Rotation period: {datos2.result?.properties.rotation_period}
+              Rotación: {datos2.result?.properties.rotation_period} dias
             </li>
-            <li>Orbital period: {datos2.result?.properties.orbital_period}</li>
-            <li>Gravity: {datos2.result?.properties.gravity}</li>
-            <li>Population: {datos2.result?.properties.population}</li>
-            <li>Climate: {datos2.result?.properties.climate}</li>
-            <li>Terrain: {datos2.result?.properties.terrain}</li>
-            <li>Surface water: {datos2.result?.properties.surface_water}</li>
+            <li>Orbita: {datos2.result?.properties.orbital_period} dias</li>
+            <li>Gravedad: {datos2.result?.properties.gravity}</li>
+            <li>Población: {datos2.result?.properties.population} individuos</li>
+            <li>Clima: {datos2.result?.properties.climate}</li>
+            <li>Terrreno: {datos2.result?.properties.terrain}</li>
+            <li>Superficie de agua: {datos2.result?.properties.surface_water} atmosferas</li>
           </ul>
         </div>
       </div>
